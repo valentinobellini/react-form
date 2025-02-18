@@ -5,7 +5,7 @@ export default function Blog() {
     return (
         <div className="blog-container">
             <div className="blog">
-                <h2 className="title">BLOG</h2>
+                <h2 className="title">BLOG DI CUCINA SURREALISTA</h2>
                 <BlogPost />
             </div>
         </div>
