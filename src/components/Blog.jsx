@@ -3,11 +3,9 @@ import BlogPost from "./BlogPosts";
 export default function Blog() {
 
     return (
-        <div className="blog-container">
-            <div className="blog">
-                <h2 className="title">BLOG DI CUCINA SURREALISTA</h2>
-                <BlogPost />
-            </div>
+        <div className="blog">
+            <h2 className="title">BLOG DI CUCINA SURREALISTA</h2>
+            <BlogPost />
         </div>
     )
 }

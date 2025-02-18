@@ -61,30 +61,44 @@ export default function BlogPost() {
     }
 
 
+    // funzione per intercettare Ctrl + Enter all'interno del text area e inviare il form
+    const handleKeyDown = event => {
+        if (event.key === "Enter" && event.ctrlKey) {
+            event.preventDefault(); // Evita di andare a capo
+            addPost(event); // Invia il form
+        }
+    };
+
+
+
     return (
 
         <>
-            {/* form per aggiunta post */}
-            <p className="input-caption" >AGGIUNGI UNA RICETTA</p>
-            <form onSubmit={addPost}>
-                <input type="text" value={newPost}
-                    onChange={event => { setNewPost(event.target.value) }}
-                />
-                <button>Invia</button>
-            </form >
+            <div className="main-wrapper">
 
+                {/* lista post */}
+                <ul className="posts-list">
+                    {posts.map((post, i) => (
+                        <li className="post" key={post.id}>
+                            <p>{post.title}</p>
+                            <button className="remove" onClick={() => removePost(i)}>
+                                X
+                            </button>
+                        </li>
+                    ))}
+                </ul>
 
-            {/* lista post */}
-            <ul>
-                {posts.map((post, i) => (
-                    <li className="post" key={post.id}>
-                        <p>{post.title}</p>
-                        <button className="remove" onClick={() => removePost(i)}>
-                            X
-                        </button>
-                    </li>
-                ))}
-            </ul>
+                {/* form per aggiunta post */}
+                <div className="right-wrapper">
+                    <p className="input-caption" >AGGIUNGI UNA RICETTA</p>
+                    <form onSubmit={addPost}>
+                        <textarea type="text" value={newPost} onKeyDown={handleKeyDown}
+                            onChange={event => { setNewPost(event.target.value) }}
+                        />
+                        <button>Invia</button>
+                    </form >
+                </div>
+            </div>
         </>
     )
 }
