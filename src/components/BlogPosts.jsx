@@ -90,7 +90,7 @@ export default function BlogPost() {
 
                 {/* form per aggiunta post */}
                 <div className="right-wrapper">
-                    <p className="input-caption" >AGGIUNGI UNA RICETTA</p>
+                    <p className="textarea-caption" >AGGIUNGI UNA RICETTA</p>
                     <form onSubmit={addPost}>
                         <textarea type="text" value={newPost} onKeyDown={handleKeyDown}
                             onChange={event => { setNewPost(event.target.value) }}

@@ -60,9 +60,10 @@ form {
   align-items: center;
 }
 
-.input-caption {
+.textarea-caption {
   font-Family: "Montserrat", sans-serif;
   font-size: 1rem;
+  font-weight: 700;
 }
 
 textarea {
@@ -87,6 +88,12 @@ form button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  font-Family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  border: 1px solid rgb(126, 126, 126);
+  border-radius: 1rem;
 }
 
 
