@@ -39,7 +39,7 @@ export default function BlogPost() {
 
         // crea nuovo oggetto post
         const newPostObject = {
-            id: posts.length + 1,
+            id: posts.length === 0 ? 1 : posts[posts.length - 1].id + 1,
             title: newPost
         };
 
@@ -72,21 +72,25 @@ export default function BlogPost() {
 
 
     return (
-
         <>
+
+
             <div className="main-wrapper">
 
-                {/* lista post */}
-                <ul className="posts-list">
-                    {posts.map((post, i) => (
-                        <li className="post" key={post.id}>
-                            <p>{post.title}</p>
-                            <button className="remove" onClick={() => removePost(i)}>
-                                X
-                            </button>
-                        </li>
-                    ))}
-                </ul>
+                {posts.length === 0 ? <p className="empty-message">La lista di ricette è vuota</p> :
+                    // lista post
+                    <ul className="posts-list">
+                        {posts.map((post, i) => (
+                            <li className="post" key={post.id}>
+                                <p>{post.title}</p>
+                                <button className="remove" onClick={() => removePost(i)}>
+                                    X
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                }
+
 
                 {/* form per aggiunta post */}
                 <div className="right-wrapper">
