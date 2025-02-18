@@ -24,10 +24,19 @@ export default function BlogPost() {
     // funzione per l'aggiunta di un nuovo post da input
     const addPost = e => {
         e.preventDefault();
-        const updatedPost = [...posts, newPost];
-        setPosts(updatedPost);
+        const updatedPosts = [...posts, newPost];
+        setPosts(updatedPosts);
         // azzeriamo il valore di newPost in input
         setNewPost('');
+    }
+
+
+    // funzione per la rimozione del post
+    const removePost = i => {
+        const updatedPosts = posts.filter((post, index) => {
+            return index !== i
+        });
+        setPosts(updatedPosts);
     }
 
 
@@ -49,8 +58,9 @@ export default function BlogPost() {
                     <li className="post" key={i}>
                         {/* <h3>{post.title}</h3> */}
                         <p>{post}</p>
-                        <div className="post-lower-wrapper">
-                        </div>
+                        <button className="remove" onClick={() => removePost(i)}>
+                            X
+                        </button>
                     </li>
                 ))}
             </ul>

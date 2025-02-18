@@ -5,6 +5,11 @@
 }
 
 
+/* form style */
+form {
+  margin-bottom: 5rem;
+}
+
 
 
 
@@ -12,7 +17,7 @@
 .blog-container {}
 
 .blog {
-  width: 70%;
+  width: 50%;
   margin: 2rem auto;
   text-align: center;
 }
@@ -24,7 +29,6 @@
 .blog h2 {
   font-Family: "Barlow Condensed", sans-serif;
   font-size: 4rem;
-  margin: 2em 0;
 }
 
 
@@ -32,9 +36,18 @@
 
 /* post style */
 .post {
-  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
   list-style: none;
   border-bottom: 1px dashed black;
+}
+
+.remove {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  font-weight: 800;
 }
 
 .post h3 {
@@ -44,13 +57,12 @@
 }
 
 
-
 /* post content style */
 .post p {
   font-Family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 1.2rem;
-  line-height: 2rem;
+  line-height: 1rem;
 }
 
 
