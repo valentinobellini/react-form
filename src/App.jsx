@@ -1,11 +1,13 @@
-import { useState } from 'react'
+
 import './App.css'
+import Blog from './components/Blog.jsx'
+
 
 function App() {
 
   return (
     <>
-      <h1>hello world</h1>
+      <Blog></Blog>
     </>
   )
 }
